@@ -1,0 +1,16 @@
+node_modules
+.next
+out
+.env
+.env.*
+*.local
+.DS_Store
+Thumbs.db
+tsconfig.tsbuildinfo
+
+# raw source assets (sudah diproses ke public/)
+logo-header.png
+hire-me.png
+profile-picture.png
+logo.png
+favicon.png

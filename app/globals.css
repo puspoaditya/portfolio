@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+
+html, body { background: #0a0a0b; color: #ededf0; }
+
+body {
+  font-feature-settings: "ss01", "cv11";
+}
+
+/* ─── Global background ─────────────────── */
+.site-bg {
+  background:
+    radial-gradient(ellipse 80% 50% at 0% 0%, rgba(124,92,255,.18) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(34,211,238,.12) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 60% at 50% 100%, rgba(124,92,255,.08) 0%, transparent 60%),
+    #0a0a0b;
+}
+
+/* dot grid overlay */
+.dot-grid {
+  position: relative;
+}
+.dot-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255,255,255,.055) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 0%, black 20%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 0%, black 20%, transparent 80%);
+}
+
+::selection { background: rgba(124,92,255,.35); }
+
+.container-x { max-width: 1180px; margin-inline: auto; padding-inline: 1.25rem; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .7rem 1.1rem; border-radius: .75rem;
+  font-weight: 600; font-size: .92rem;
+  border: 1px solid #26262c; transition: all .2s ease; cursor: pointer;
+}
+.btn-primary {
+  background: linear-gradient(135deg, #7c5cff, #5b8cff);
+  color: white; border-color: transparent;
+  box-shadow: 0 4px 18px -4px rgba(124,92,255,.45);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 32px -8px rgba(124,92,255,.65); }
+.btn-ghost { color: #ededf0; }
+.btn-ghost:hover { background: #16161a; border-color: #34343c; }
+
+.card {
+  background: linear-gradient(180deg, #16161c, #0f0f13);
+  border: 1px solid #22222c;
+  border-radius: 1rem;
+  transition: border-color .2s;
+}
+.card:hover { border-color: #3a3a48; }
+
+.chip {
+  display: inline-flex; align-items: center; gap: .35rem;
+  padding: .25rem .6rem; border-radius: 999px;
+  font-size: .72rem; letter-spacing: .02em;
+  background: rgba(124,92,255,.12); color: #c7bdff;
+  border: 1px solid rgba(124,92,255,.28);
+}
+
+.section-title {
+  font-size: clamp(1.65rem, 2.5vw, 2.15rem);
+  font-weight: 700; letter-spacing: -0.02em;
+}
+.eyebrow {
+  font-size: .76rem; text-transform: uppercase; letter-spacing: .2em;
+  color: #a89dff; font-weight: 600;
+}
+
+/* ─── Blob animations ────────────────────── */
+@keyframes blob1 {
+  0%,100% { transform: translate(0,0) scale(1); }
+  33%      { transform: translate(30px,-20px) scale(1.06); }
+  66%      { transform: translate(-20px,10px) scale(.95); }
+}
+@keyframes blob2 {
+  0%,100% { transform: translate(0,0) scale(1); }
+  40%      { transform: translate(-25px,20px) scale(1.05); }
+  70%      { transform: translate(15px,-15px) scale(.97); }
+}
+.blob1 { animation: blob1 12s ease-in-out infinite; }
+.blob2 { animation: blob2 15s ease-in-out infinite; }
+
+/* ─── Browser mockup ─────────────────────── */
+.browser-frame {
+  background: #13131a;
+  border: 1px solid #2a2a35;
+  border-radius: .75rem;
+  overflow: hidden;
+}
+.browser-bar {
+  background: #1a1a23;
+  border-bottom: 1px solid #2a2a35;
+  padding: .45rem .75rem;
+  display: flex; align-items: center; gap: .5rem;
+}
+.browser-dot { width: 9px; height: 9px; border-radius: 50%; }
+.browser-url {
+  flex: 1; margin-left: .35rem;
+  background: #0f0f14; border-radius: .35rem;
+  padding: .2rem .6rem; font-size: .68rem; color: #555566;
+}
+
+/* ─── Phone mockup ───────────────────────── */
+.phone-frame {
+  background: #13131a;
+  border: 2px solid #2a2a38;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  position: relative;
+}
+.phone-notch {
+  margin: 0 auto;
+  width: 40%;
+  height: 18px;
+  background: #0a0a0e;
+  border-radius: 0 0 .75rem .75rem;
+}
+
+/* ─── Shine effect on cards ──────────────── */
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+.shine::before {
+  content: "";
+  position: absolute;
+  top: -50%; left: -60%;
+  width: 60%; height: 200%;
+  background: linear-gradient(105deg, transparent 20%, rgba(255,255,255,.045) 50%, transparent 80%);
+  transform: skewX(-15deg);
+  transition: left .5s ease;
+  pointer-events: none;
+}
+.shine:hover::before { left: 130%; }
