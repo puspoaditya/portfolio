@@ -4,14 +4,8 @@ import { profile } from "@/lib/config";
 export function Hero() {
   return (
     <section className="relative dot-grid overflow-hidden">
-      {/* decorative blobs */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
-        <div className="blob1 absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full opacity-[.22]"
-          style={{ background: "radial-gradient(circle at 40% 40%, #7c5cff, transparent 65%)" }} />
-        <div className="blob2 absolute top-10 -right-32 w-[500px] h-[500px] rounded-full opacity-[.16]"
-          style={{ background: "radial-gradient(circle at 60% 50%, #22d3ee, transparent 65%)" }} />
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-[#7c5cff]/30 to-transparent" />
-      </div>
+      {/* subtle bottom divider */}
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#7c5cff]/30 to-transparent" aria-hidden />
 
       <div className="container-x relative py-16 sm:py-24 lg:py-28">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -90,7 +84,7 @@ function ProfilePhoto() {
      * - Hover: overlay fades to 0, natural photo colors reveal
      * - Offset border animates from bottom-right corner to top-left on hover
      */
-    <div className="relative w-[300px] h-[300px] group">
+    <div className="relative w-[500px] h-[500px] group">
 
       {/* offset border — starts bottom-right, moves top-left on hover */}
       <div className="absolute inset-0 rounded-lg border-2 border-[#22d3ee]/60
@@ -107,7 +101,7 @@ function ProfilePhoto() {
           alt={profile.name}
           fill
           className="object-cover"
-          sizes="300px"
+          sizes="500px"
           priority
         />
 
