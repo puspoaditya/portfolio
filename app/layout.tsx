@@ -5,11 +5,11 @@ import { Footer } from "@/components/Footer";
 import { profile } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Aditya Puspo · Dev for Service Businesses",
+  title: "Aditya Puspo · Full-Stack Dev for Service Businesses",
   description:
     "Solo full-stack developer building booking sites & apps for barbershops, salons, plumbers, electricians, cleaners & landscapers. Fast load, real results.",
   openGraph: {
-    title: "Aditya Puspo · Dev for Service Businesses",
+    title: "Aditya Puspo · Full-Stack Dev for Service Businesses",
     description:
       "Solo full-stack developer building booking sites & apps for barbershops, salons, plumbers, electricians, cleaners & landscapers. Fast load, real results.",
     type: "website",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aditya Puspo · Dev for Service Businesses",
+    title: "Aditya Puspo · Full-Stack Dev for Service Businesses",
     description:
       "Solo full-stack developer building booking sites & apps for barbershops, salons, plumbers, electricians, cleaners & landscapers.",
   },

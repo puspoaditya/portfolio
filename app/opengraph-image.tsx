@@ -38,17 +38,9 @@ export default function Image() {
         }} />
         {/* purple blob bottom */}
         <div style={{
-          position: "absolute", bottom: -150, left: "50%",
+          position: "absolute", bottom: -150, left: "40%",
           width: 700, height: 350, borderRadius: "50%",
           background: "radial-gradient(ellipse, rgba(124,92,255,0.18) 0%, transparent 65%)",
-          display: "flex",
-        }} />
-
-        {/* dot grid */}
-        <div style={{
-          position: "absolute", inset: 0,
-          backgroundImage: "radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px)",
-          backgroundSize: "28px 28px",
           display: "flex",
         }} />
 
@@ -60,55 +52,51 @@ export default function Image() {
             display: "flex", alignItems: "center", gap: 8,
             background: "rgba(124,92,255,0.12)",
             border: "1px solid rgba(124,92,255,0.3)",
-            borderRadius: 999, padding: "6px 16px",
-            width: "fit-content", marginBottom: 28,
+            borderRadius: 999, padding: "6px 18px",
+            marginBottom: 28, width: "fit-content",
           }}>
             <div style={{
               width: 8, height: 8, borderRadius: "50%",
               background: "#34d399", display: "flex",
             }} />
             <span style={{ color: "#c7bdff", fontSize: 18, fontWeight: 600 }}>
-              Available for projects
+              Available for projects · Remote · Jakarta
             </span>
           </div>
 
           {/* name */}
           <div style={{
-            fontSize: 80, fontWeight: 800,
-            color: "#ededf0", letterSpacing: "-3px", lineHeight: 1.05,
-            display: "flex",
+            fontSize: 82, fontWeight: 800, color: "#ededf0",
+            letterSpacing: "-3px", lineHeight: 1.05, display: "flex",
           }}>
             Aditya Puspo
           </div>
 
-          {/* role */}
+          {/* role — plain color, no backgroundClip */}
           <div style={{
             fontSize: 34, fontWeight: 600, marginTop: 14,
-            background: "linear-gradient(90deg, #9d7fff, #22d3ee)",
-            backgroundClip: "text",
-            color: "transparent",
-            display: "flex",
+            color: "#9d7fff", display: "flex",
           }}>
-            Full-Stack Developer · Web & Mobile
+            Full-Stack Developer · Web &amp; Mobile
           </div>
 
           {/* tagline */}
           <div style={{
-            fontSize: 24, color: "#6a6a78", marginTop: 20,
-            lineHeight: 1.5, maxWidth: 720, display: "flex",
+            fontSize: 23, color: "#6a6a78", marginTop: 20,
+            lineHeight: 1.55, maxWidth: 730, display: "flex",
           }}>
-            Building booking sites & apps for local service businesses — barbershops, salons, plumbers, cleaners & more.
+            Building booking sites &amp; apps for local service businesses —
+            barbershops, salons, plumbers, cleaners &amp; more.
           </div>
 
           {/* industry chips */}
-          <div style={{ display: "flex", gap: 10, marginTop: 36, flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: 10, marginTop: 36 }}>
             {["💈 Barber", "💅 Salon", "🧽 Cleaning", "⚡ Electrician", "🌿 Landscaper", "🔧 Mechanic"].map((t) => (
               <div key={t} style={{
-                padding: "7px 18px", borderRadius: 999,
+                padding: "7px 16px", borderRadius: 999,
                 background: "rgba(124,92,255,0.12)",
                 border: "1px solid rgba(124,92,255,0.28)",
-                color: "#c7bdff", fontSize: 19,
-                display: "flex",
+                color: "#c7bdff", fontSize: 18, display: "flex",
               }}>
                 {t}
               </div>
@@ -116,14 +104,14 @@ export default function Image() {
           </div>
         </div>
 
-        {/* bottom: url + stats */}
+        {/* bottom bar */}
         <div style={{
           position: "absolute", bottom: 44, left: 80, right: 80,
           display: "flex", justifyContent: "space-between", alignItems: "center",
         }}>
           <div style={{ color: "#3a3a48", fontSize: 20 }}>adityapuspo.vercel.app</div>
           <div style={{ display: "flex", gap: 32 }}>
-            {[["7+", "Projects"], ["3×", "Bookings lift"], ["48h", "First mockup"]].map(([v, l]) => (
+            {[["7+", "Projects"], ["3×", "Booking lift"], ["48h", "First mockup"]].map(([v, l]) => (
               <div key={l} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                 <span style={{ color: "#7c5cff", fontSize: 26, fontWeight: 700 }}>{v}</span>
                 <span style={{ color: "#3a3a48", fontSize: 15, marginTop: 2 }}>{l}</span>
