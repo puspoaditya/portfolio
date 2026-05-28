@@ -5,12 +5,22 @@ import { Footer } from "@/components/Footer";
 import { profile } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: `${profile.name} — ${profile.role}`,
-  description: profile.tagline,
+  title: "Aditya Puspo · Dev for Service Businesses",
+  description:
+    "Solo full-stack developer building booking sites & apps for barbershops, salons, plumbers, electricians, cleaners & landscapers. Fast load, real results.",
   openGraph: {
-    title: `${profile.name} — Full-Stack Developer for Local Service Businesses`,
-    description: profile.tagline,
+    title: "Aditya Puspo · Dev for Service Businesses",
+    description:
+      "Solo full-stack developer building booking sites & apps for barbershops, salons, plumbers, electricians, cleaners & landscapers. Fast load, real results.",
     type: "website",
+    url: "https://adityapuspo.vercel.app",
+    siteName: "Aditya Puspo",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Aditya Puspo · Dev for Service Businesses",
+    description:
+      "Solo full-stack developer building booking sites & apps for barbershops, salons, plumbers, electricians, cleaners & landscapers.",
   },
 };
 
