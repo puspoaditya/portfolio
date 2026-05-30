@@ -1,12 +1,18 @@
+"use client";
 import { profile } from "@/lib/config";
+import { useLanguage } from "@/context/LanguageContext";
+import { getT } from "@/lib/translations";
 
 export function Footer() {
+  const { lang } = useLanguage();
+  const t = getT(lang);
+
   return (
     <footer className="border-t border-border/60 mt-24">
       <div className="container-x py-10 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between text-sm text-muted">
         <div>
           <div className="text-text font-semibold">{profile.name}</div>
-          <div>{profile.tagline}</div>
+          <div>{t.footer.tagline}</div>
         </div>
         <div className="flex flex-col sm:items-end gap-1">
           <a className="hover:text-text" href={profile.emailLink}>{profile.email}</a>

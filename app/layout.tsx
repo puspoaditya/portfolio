@@ -3,6 +3,7 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { profile } from "@/lib/config";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 export const metadata: Metadata = {
   title: "Aditya Puspo · Full-Stack Dev for Service Businesses",
@@ -56,11 +57,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             style={{ background: "radial-gradient(ellipse at 50% 100%, #7c5cff, transparent 65%)" }} />
         </div>
 
-        <div className="relative z-10">
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </div>
+        <LanguageProvider>
+          <div className="relative z-10">
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </div>
+        </LanguageProvider>
       </body>
     </html>
   );

@@ -1,6 +1,12 @@
+"use client";
 import { profile } from "@/lib/config";
+import { useLanguage } from "@/context/LanguageContext";
+import { getT } from "@/lib/translations";
 
 export function Contact() {
+  const { lang } = useLanguage();
+  const t = getT(lang);
+
   return (
     <section id="contact" className="container-x py-20">
       <div className="card p-8 sm:p-12 relative overflow-hidden">
@@ -9,13 +15,9 @@ export function Contact() {
           style={{ background: "radial-gradient(circle, #7c5cff, transparent 60%)" }}
         />
         <div className="relative">
-          <div className="eyebrow">Let’s talk</div>
-          <h2 className="section-title mt-2 max-w-2xl">
-            Tell me about your business. I’ll reply within a few hours.
-          </h2>
-          <p className="text-muted mt-3 max-w-xl">
-            The fastest way to start is a quick WhatsApp message. If you prefer, email works too — I read every one.
-          </p>
+          <div className="eyebrow">{t.contact.eyebrow}</div>
+          <h2 className="section-title mt-2 max-w-2xl">{t.contact.title}</h2>
+          <p className="text-muted mt-3 max-w-xl">{t.contact.desc}</p>
 
           <div className="mt-7 flex flex-wrap gap-3">
             <a href={profile.whatsappLink} target="_blank" rel="noreferrer" className="btn btn-primary">
@@ -27,21 +29,15 @@ export function Contact() {
           </div>
 
           <div className="mt-8 grid sm:grid-cols-3 gap-4 text-sm">
-            <Info label="Location" value={profile.location} />
-            <Info label="Response time" value="Within a few hours, Mon–Sat" />
-            <Info label="Availability" value="2 project slots open this month" />
+            {t.contact.info.map((i) => (
+              <div key={i.label}>
+                <div className="text-xs uppercase tracking-widest text-muted">{i.label}</div>
+                <div className="mt-1 text-text">{i.value}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
     </section>
-  );
-}
-
-function Info({ label, value }: { label: string; value: string }) {
-  return (
-    <div>
-      <div className="text-xs uppercase tracking-widest text-muted">{label}</div>
-      <div className="mt-1 text-text">{value}</div>
-    </div>
   );
 }

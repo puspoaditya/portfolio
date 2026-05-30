@@ -1,24 +1,27 @@
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getProject, projects } from "@/lib/portfolio";
+import { projects } from "@/lib/portfolio";
+import { projectsId } from "@/lib/portfolio-id";
+import { getProjectFromAll, getAllSlugs } from "@/lib/portfolio-all";
 import { profile } from "@/lib/config";
 
 export function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
+  return getAllSlugs();
 }
 
 export function generateMetadata({ params }: { params: { slug: string } }) {
-  const p = getProject(params.slug);
+  const p = getProjectFromAll(params.slug);
   if (!p) return {};
   return { title: `${p.title} · ${profile.name}`, description: p.summary };
 }
 
 export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const p = getProject(params.slug);
+  const p = getProjectFromAll(params.slug);
   if (!p) notFound();
 
-  const related = projects.filter((x) => x.slug !== p.slug).slice(0, 3);
+  const allProjects = [...projects, ...projectsId];
+  const related = allProjects.filter((x) => x.slug !== p.slug).slice(0, 3);
 
   return (
     <article className="container-x py-12">

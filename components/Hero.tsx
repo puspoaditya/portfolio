@@ -1,7 +1,14 @@
+"use client";
 import Image from "next/image";
 import { profile } from "@/lib/config";
+import { useLanguage } from "@/context/LanguageContext";
+import { getT } from "@/lib/translations";
 
 export function Hero() {
+  const { lang } = useLanguage();
+  const t = getT(lang);
+  const h = t.hero;
+
   return (
     <section className="relative dot-grid overflow-hidden">
       {/* subtle bottom divider */}
@@ -14,39 +21,32 @@ export function Hero() {
           <div>
             <div className="chip mb-5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              Available for 2 projects this month
+              {h.badge}
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.07]">
-              I build{" "}
+              {h.h1_pre}{" "}
               <span className="relative inline-block">
                 <span className="bg-gradient-to-r from-[#9d7fff] via-[#7c5cff] to-[#5b8cff] bg-clip-text text-transparent">
-                  websites & apps
+                  {h.h1_accent}
                 </span>
                 <span className="absolute -bottom-1 left-0 right-0 h-px bg-gradient-to-r from-[#7c5cff]/0 via-[#7c5cff]/60 to-[#7c5cff]/0" />
               </span>{" "}
-              that grow local service businesses.
+              {h.h1_post}
             </h1>
             <p className="mt-5 text-[1.05rem] text-[#8a8a98] leading-relaxed max-w-xl">
-              Solo full-stack developer helping barbershops, salons, plumbers, electricians,
-              cleaners, landscapers, and mobile mechanics turn visitors into booked jobs — fast
-              sites, real bookings, real revenue.
+              {h.desc}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href={profile.whatsappLink} target="_blank" rel="noreferrer" className="btn btn-primary">
-                <WAIcon /> Message me on WhatsApp
+                <WAIcon /> {h.cta_wa}
               </a>
               <a href={profile.emailLink} className="btn btn-ghost">
-                <MailIcon /> Email me
+                <MailIcon /> {h.cta_email}
               </a>
             </div>
 
             <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3">
-              {[
-                ["7+", "Projects shipped"],
-                ["3×", "Avg. booking lift"],
-                ["48h", "First mockup"],
-                ["Solo", "No agency markup"],
-              ].map(([k, v]) => (
+              {h.stats.map(([k, v]) => (
                 <div key={v} className="card p-3.5 shine">
                   <div className="text-xl font-bold text-white">{k}</div>
                   <div className="text-[11px] text-[#666676] mt-0.5 leading-tight">{v}</div>
@@ -64,8 +64,8 @@ export function Hero() {
 
         {/* industry chips row */}
         <div className="mt-14 flex flex-wrap gap-2 items-center">
-          <span className="text-xs text-[#555566] mr-1">Industries I serve:</span>
-          {["💈 Barber Shop","💅 Beauty Salon","🧽 Cleaning","⚡ Electrician","🌿 Landscaper","🔧 Mechanic","🔧 Plumber"].map(x => (
+          <span className="text-xs text-[#555566] mr-1">{h.industriesLabel}</span>
+          {h.industries.map(x => (
             <span key={x} className="text-xs px-3 py-1 rounded-full border border-[#26262c] text-[#888896] hover:border-[#3a3a48] hover:text-[#ededf0] transition-colors cursor-default">
               {x}
             </span>
