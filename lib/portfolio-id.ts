@@ -177,7 +177,7 @@ export const projectsId: Project[] = [
     ],
     hero: { from: "#0a1520", to: "#6366f1", emoji: "📦" },
     photo: U("photo-1601584115197-04ecc0da31d7"),
-    photos: [U("photo-1601584115197-04ecc0da31d7"), U("photo-1416879595882-3373a0480b5b"), U("photo-1558618047-3c8c76ca7d13")],
+    photos: [U("photo-1601584115197-04ecc0da31d7"), U("photo-1416879595882-3373a0480b5b"), U("photo-1600880292203-757bb62b4baf")],
   },
 ];
 
