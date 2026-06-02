@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { profile } from "@/lib/config";
 import { LanguageProvider } from "@/context/LanguageContext";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://adityapuspo.vercel.app"),
   title: "Aditya Puspo · Full-Stack Dev for Service Businesses",
   description:
     "Solo full-stack developer building booking sites & apps for barbershops, salons, plumbers, electricians, cleaners & landscapers. Fast load, real results.",
@@ -16,12 +16,13 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://adityapuspo.vercel.app",
     siteName: "Aditya Puspo",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Aditya Puspo — Full-Stack Developer" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Aditya Puspo · Full-Stack Dev for Service Businesses",
-    description:
-      "Solo full-stack developer building booking sites & apps for barbershops, salons, plumbers, electricians, cleaners & landscapers.",
+    description: "Solo full-stack developer building booking sites & apps for local service businesses.",
+    images: ["/og.png"],
   },
 };
 
